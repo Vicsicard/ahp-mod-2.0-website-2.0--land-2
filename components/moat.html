@@ -1,0 +1,316 @@
+<!-- Moat Section -->
+<section class="section section-dark" id="moat-section">
+    <style>
+        .moat-section {
+            background: linear-gradient(180deg, var(--graphite), var(--charcoal));
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .moat-section::before {
+            content: "";
+            position: absolute;
+            bottom: -10%;
+            left: -10%;
+            width: 60%;
+            height: 60%;
+            background: rgba(69, 162, 158, 0.05);
+            filter: blur(100px);
+            border-radius: 50%;
+            z-index: 0;
+        }
+        
+        .moat-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .moat-card {
+            background: rgba(26, 27, 38, 0.5);
+            backdrop-filter: blur(10px);
+            border-radius: var(--border-radius-lg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 2.5rem;
+            height: 100%;
+            transition: all 0.3s ease;
+            color: white;
+        }
+        
+        .moat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: rgba(69, 162, 158, 0.3);
+        }
+        
+        .moat-icon {
+            width: 64px;
+            height: 64px;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+        
+        .moat-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        
+        .moat-card p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+        
+        .moat-stat {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.125rem;
+        }
+        
+        .moat-comparison {
+            margin-top: 4rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            color: white;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+        }
+        
+        .comparison-table th, .comparison-table td {
+            padding: 1.25rem;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .comparison-table th {
+            background: rgba(26, 27, 38, 0.7);
+            font-weight: 700;
+            font-size: 1.125rem;
+        }
+        
+        .comparison-table th:first-child {
+            text-align: left;
+        }
+        
+        .comparison-table td:first-child {
+            text-align: left;
+            font-weight: 600;
+            color: white;
+        }
+        
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .comparison-table tr:nth-child(odd) td {
+            background: rgba(26, 27, 38, 0.3);
+        }
+        
+        .comparison-table tr:nth-child(even) td {
+            background: rgba(26, 27, 38, 0.5);
+        }
+        
+        .comparison-check {
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+        
+        .comparison-x {
+            color: #EF4444;
+            font-size: 1.5rem;
+        }
+        
+        .comparison-partial {
+            color: #F59E0B;
+            font-size: 1.5rem;
+        }
+        
+        .comparison-highlight {
+            background: rgba(69, 162, 158, 0.1) !important;
+        }
+        
+        .comparison-header-highlight {
+            background: linear-gradient(135deg, var(--primary), var(--secondary)) !important;
+            color: white;
+            position: relative;
+        }
+        
+        .comparison-header-highlight::after {
+            content: "Industry Leader";
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--violet);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.25rem 0.75rem;
+            border-radius: var(--border-radius-full);
+            white-space: nowrap;
+        }
+        
+        .patent-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.25rem 0.75rem;
+            background: rgba(69, 162, 158, 0.1);
+            border-radius: var(--border-radius-full);
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-top: 1rem;
+        }
+        
+        @media (max-width: 992px) {
+            .comparison-table {
+                font-size: 0.875rem;
+            }
+            
+            .comparison-table th, .comparison-table td {
+                padding: 1rem 0.5rem;
+            }
+            
+            .comparison-header-highlight::after {
+                font-size: 0.625rem;
+                padding: 0.125rem 0.5rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .comparison-table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+        }
+    </style>
+
+    <div class="container moat-section">
+        <div class="section-header animate-on-scroll">
+            <h2 class="section-title">Our Competitive <span class="highlight-text">Moat</span></h2>
+            <p class="section-subtitle">Multiple layers of protection ensure long-term market dominance</p>
+        </div>
+        
+        <div class="grid moat-content">
+            <div class="col-4 col-md-6 col-sm-12 animate-on-scroll delay-100">
+                <div class="moat-card">
+                    <svg class="moat-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                    <h3>Patent Portfolio</h3>
+                    <p>Our core technology is protected by 7 pending patents covering the protocol architecture, communication methods, and integration systems.</p>
+                    <div class="patent-badge">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                            <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
+                        </svg>
+                        7 Patents Pending
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-4 col-md-6 col-sm-12 animate-on-scroll delay-200">
+                <div class="moat-card">
+                    <svg class="moat-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                    <h3>Network Effects</h3>
+                    <p>Each new integration strengthens our protocol's value proposition. With 2,500+ developer stars and growing adoption, we're creating powerful network effects.</p>
+                    <div class="moat-stat">4.7x Monthly Growth Rate</div>
+                </div>
+            </div>
+            
+            <div class="col-4 col-md-6 col-sm-12 animate-on-scroll delay-300">
+                <div class="moat-card">
+                    <svg class="moat-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                    <h3>Strategic Partnerships</h3>
+                    <p>We've secured early partnerships with key AI platforms and enterprise customers, creating high switching costs and establishing AHP as the standard.</p>
+                    <div class="moat-stat">12 Enterprise Partners</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="moat-comparison animate-on-scroll delay-400">
+            <h3 class="text-center mb-4" style="color: white;">Competitive Analysis</h3>
+            
+            <div class="table-responsive">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th class="comparison-header-highlight">AHP Mod 2.0</th>
+                            <th>Proprietary APIs</th>
+                            <th>Custom Solutions</th>
+                            <th>Open Source Tools</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Universal Model Compatibility</td>
+                            <td class="comparison-highlight"><span class="comparison-check">✓</span></td>
+                            <td><span class="comparison-x">✗</span></td>
+                            <td><span class="comparison-partial">~</span></td>
+                            <td><span class="comparison-partial">~</span></td>
+                        </tr>
+                        <tr>
+                            <td>Protocol-Level Standardization</td>
+                            <td class="comparison-highlight"><span class="comparison-check">✓</span></td>
+                            <td><span class="comparison-x">✗</span></td>
+                            <td><span class="comparison-x">✗</span></td>
+                            <td><span class="comparison-x">✗</span></td>
+                        </tr>
+                        <tr>
+                            <td>Enterprise-Grade Security</td>
+                            <td class="comparison-highlight"><span class="comparison-check">✓</span></td>
+                            <td><span class="comparison-partial">~</span></td>
+                            <td><span class="comparison-partial">~</span></td>
+                            <td><span class="comparison-x">✗</span></td>
+                        </tr>
+                        <tr>
+                            <td>Computational Efficiency</td>
+                            <td class="comparison-highlight"><span class="comparison-check">✓</span></td>
+                            <td><span class="comparison-partial">~</span></td>
+                            <td><span class="comparison-x">✗</span></td>
+                            <td><span class="comparison-partial">~</span></td>
+                        </tr>
+                        <tr>
+                            <td>Patent Protection</td>
+                            <td class="comparison-highlight"><span class="comparison-check">✓</span></td>
+                            <td><span class="comparison-partial">~</span></td>
+                            <td><span class="comparison-x">✗</span></td>
+                            <td><span class="comparison-x">✗</span></td>
+                        </tr>
+                        <tr>
+                            <td>Implementation Time</td>
+                            <td class="comparison-highlight">Hours</td>
+                            <td>Days</td>
+                            <td>Weeks</td>
+                            <td>Days</td>
+                        </tr>
+                        <tr>
+                            <td>Scalability</td>
+                            <td class="comparison-highlight">Unlimited</td>
+                            <td>Limited</td>
+                            <td>Custom</td>
+                            <td>Variable</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <div class="text-center mt-5 animate-on-scroll delay-500">
+            <a href="#market-section" class="btn btn-primary btn-lg">Explore Market Opportunity</a>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,317 @@
+<!-- Hero Section -->
+<section class="hero" id="hero">
+    <style>
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            background: linear-gradient(180deg, var(--charcoal), var(--graphite));
+            overflow: hidden;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 120px; /* Increased padding to prevent text from being cut off by the header */
+        }
+        
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 15%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50%;
+            height: 40%;
+            background: rgba(139, 92, 246, 0.08);
+            filter: blur(120px);
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0;
+            width: 100%;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.625rem;
+            padding: 0.6rem 1.25rem;
+            background: rgba(139, 92, 246, 0.15);
+            border-radius: 9999px;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 4px 12px -2px rgba(139, 92, 246, 0.15);
+        }
+
+        .hero-badge span {
+            width: 10px;
+            height: 10px;
+            background: linear-gradient(135deg, #8b5cf6, #a78bfa);
+            border-radius: 50%;
+            box-shadow: 0 0 8px rgba(139, 92, 246, 0.5);
+        }
+
+        .hero-badge p {
+            font-size: 0.9375rem;
+            font-weight: 700;
+            margin: 0;
+            background: linear-gradient(135deg, #8b5cf6, #a78bfa);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 0.02em;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.04em;
+        }
+
+        .hero-highlight {
+            color: #8b5cf6;
+            background: linear-gradient(135deg, #8b5cf6, #c4b5fd);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 900;
+        }
+
+        .hero-description {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            margin-bottom: 3rem;
+            color: rgba(255, 255, 255, 0.85);
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 400;
+            letter-spacing: 0.01em;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-cta-group {
+                flex-direction: column;
+            }
+            
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .hero-description {
+                font-size: 1.125rem;
+            }
+        }
+
+        .social-proof {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .social-proof-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .social-proof-icon {
+            width: 24px;
+            height: 24px;
+            color: var(--primary);
+        }
+
+        .social-proof-text {
+            font-size: 0.9375rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .hero-animation {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            margin-top: 2rem;
+            overflow: hidden;
+            border-radius: var(--border-radius-lg);
+            background: rgba(26, 27, 38, 0.5);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .hero-animation-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .protocol-animation {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .protocol-node {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.25rem;
+            box-shadow: 0 0 20px rgba(69, 162, 158, 0.4);
+        }
+
+        .protocol-line {
+            position: relative;
+            height: 4px;
+            width: 100px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            overflow: hidden;
+        }
+
+        .protocol-line::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 30px;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.7);
+            filter: blur(5px);
+            animation: protocolPulse 2s infinite;
+        }
+
+        @keyframes protocolPulse {
+            0% {
+                transform: translateX(-30px);
+            }
+            100% {
+                transform: translateX(130px);
+            }
+        }
+
+        .floating-nav {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(26, 27, 38, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: var(--border-radius-full);
+            padding: 0.75rem 1.5rem;
+            display: flex;
+            gap: 1.5rem;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 3;
+        }
+
+        .floating-nav-link {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .floating-nav-link:hover {
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .floating-nav {
+                display: none;
+            }
+        }
+    </style>
+    
+    <div class="hero-content">
+        <div class="hero-badge">
+            <span></span>
+            <p>PROTOCOL-LEVEL INFRASTRUCTURE</p>
+        </div>
+        
+        <h1>
+            AHP Mod 2.0: The <span class="hero-highlight">Protocol-Level</span> Solution for Human-AI Communication
+        </h1>
+        
+        <p class="hero-description">
+            Establishing the fundamental infrastructure layer for the $407B AI market
+        </p>
+        
+        <div class="hero-cta-group">
+            <a href="#cta-section" class="btn btn-investor btn-lg">Request Investor Deck</a>
+            <a href="#protocol-revolution" class="btn btn-secondary btn-lg">Learn More</a>
+        </div>
+        
+        <div class="hero-animation">
+            <div class="hero-animation-content">
+                <div class="protocol-animation">
+                    <div class="protocol-node">H</div>
+                    <div class="protocol-line"></div>
+                    <div class="protocol-node">AI</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="social-proof">
+            <div class="social-proof-item">
+                <svg class="social-proof-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span class="social-proof-text">OpenAI Integration</span>
+            </div>
+            
+            <div class="social-proof-item">
+                <svg class="social-proof-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span class="social-proof-text">Anthropic Integration</span>
+            </div>
+            
+            <div class="social-proof-item">
+                <svg class="social-proof-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span class="social-proof-text">2,500+ Developer Stars</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="floating-nav">
+        <a href="#protocol-revolution" class="floating-nav-link">Protocol Architecture</a>
+        <a href="#market-section" class="floating-nav-link">Market</a>
+        <a href="#moat-section" class="floating-nav-link">Moat</a>
+        <a href="#investment-section" class="floating-nav-link">Investment Terms</a>
+        <a href="#cta-section" class="floating-nav-link">Contact</a>
+    </div>
+</section>

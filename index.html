@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AHP Mod 2.0: The Protocol-Level Solution for Human-AI Communication</title>
+    <meta name="description" content="AHP Mod 2.0 is establishing the fundamental infrastructure layer for the $407B AI market. Learn about investment opportunities in this protocol-level solution for human-AI communication.">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="AHP Mod 2.0: The Protocol-Level Solution for Human-AI Communication">
+    <meta property="og:description" content="Establishing the fundamental infrastructure layer for the $407B AI market. Learn about investment opportunities in this protocol-level solution.">
+    <meta property="og:image" content="images/social/og-image.jpg">
+    <meta property="og:url" content="https://aihandshake.org/investors">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AHP Mod 2.0: The Protocol-Level Solution for Human-AI Communication">
+    <meta name="twitter:description" content="Establishing the fundamental infrastructure layer for the $407B AI market. Learn about investment opportunities.">
+    <meta name="twitter:image" content="images/social/og-image.jpg">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../ahp-mod-2.0-website-2.0/images/favicon.png">
+    <link rel="shortcut icon" href="../ahp-mod-2.0-website-2.0/images/favicon.ico">
+    <link rel="apple-touch-icon" href="../ahp-mod-2.0-website-2.0/images/favicon.png">
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Component placeholders -->
+        <div id="navbar-section"></div>
+        <div id="hero-section"></div>
+        <div id="protocol-revolution-section"></div>
+        <div id="urgency-section"></div>
+        <div id="problem-section"></div>
+        <div id="solution-section"></div>
+        <div id="technical-section"></div>
+        <div id="moat-section"></div>
+        <div id="market-section"></div>
+        <div id="traction-section"></div>
+        <div id="investment-section"></div>
+        <div id="team-section"></div>
+        <div id="cta-section"></div>
+        <div id="footer-section"></div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // Function to load HTML components
+        function loadComponent(url, targetId) {
+            return fetch(url)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`Failed to load component: ${url}`);
+                    }
+                    return response.text();
+                })
+                .then(html => {
+                    document.getElementById(targetId).innerHTML = html;
+                })
+                .catch(error => {
+                    console.error(`Error loading component ${url}:`, error);
+                    document.getElementById(targetId).innerHTML = `<div class="error-loading">Error loading component</div>`;
+                });
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load all components with proper error handling
+            Promise.all([
+                loadComponent('components/navbar.html', 'navbar-section'),
+                loadComponent('components/hero.html', 'hero-section'),
+                loadComponent('components/protocol-revolution.html', 'protocol-revolution-section'),
+                loadComponent('components/urgency.html', 'urgency-section'),
+                loadComponent('components/problem.html', 'problem-section'),
+                loadComponent('components/solution.html', 'solution-section'),
+                loadComponent('components/technical.html', 'technical-section'),
+                loadComponent('components/moat.html', 'moat-section'),
+                loadComponent('components/market.html', 'market-section'),
+                loadComponent('components/traction.html', 'traction-section'),
+                loadComponent('components/investment.html', 'investment-section'),
+                loadComponent('components/team.html', 'team-section'),
+                loadComponent('components/cta.html', 'cta-section'),
+                loadComponent('components/footer.html', 'footer-section')
+            ]).then(() => {
+                console.log('All components loaded successfully');
+                // Initialize any scripts that depend on components being loaded
+                initSmoothScrolling();
+                initAnimations();
+                initFloatingCTA();
+            }).catch(error => {
+                console.error('Error loading components:', error);
+            });
+            
+            // Initialize smooth scrolling
+            function initSmoothScrolling() {
+                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const targetId = this.getAttribute('href');
+                        if (targetId === '#') return;
+                        
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            window.scrollTo({
+                                top: targetElement.offsetTop - 80, // Adjust for header height
+                                behavior: 'smooth'
+                            });
+                        }
+                    });
+                });
+            }
+            
+            // Initialize animations
+            function initAnimations() {
+                const observerOptions = {
+                    threshold: 0.1,
+                    rootMargin: '0px 0px -100px 0px'
+                };
+                
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('animate');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, observerOptions);
+                
+                document.querySelectorAll('.animate-on-scroll').forEach(el => {
+                    observer.observe(el);
+                });
+            }
+            
+            // Initialize floating CTA
+            function initFloatingCTA() {
+                const floatingCTA = document.querySelector('.floating-cta');
+                if (!floatingCTA) return;
+                
+                const showThreshold = 300; // Show after scrolling this many pixels
+                
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > showThreshold) {
+                        floatingCTA.classList.add('visible');
+                    } else {
+                        floatingCTA.classList.remove('visible');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

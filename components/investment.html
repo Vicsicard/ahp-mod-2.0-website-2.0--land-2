@@ -1,0 +1,469 @@
+<!-- Investment Section -->
+<section class="section section-light" id="investment-section">
+    <style>
+        .investment-section {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .investment-section::before {
+            content: "";
+            position: absolute;
+            top: 20%;
+            right: -10%;
+            width: 50%;
+            height: 60%;
+            background: rgba(139, 92, 246, 0.05);
+            filter: blur(100px);
+            border-radius: 50%;
+            z-index: 0;
+        }
+        
+        .investment-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .investment-card {
+            background: white;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-md);
+            overflow: hidden;
+            height: 100%;
+        }
+        
+        .investment-card-header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            padding: 2rem;
+            color: white;
+            position: relative;
+        }
+        
+        .investment-card-header::after {
+            content: "";
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 30px;
+            background: white;
+            transform: translateX(-50%) rotate(45deg);
+        }
+        
+        .investment-card-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .investment-card-subtitle {
+            font-size: 1.125rem;
+            opacity: 0.9;
+        }
+        
+        .investment-card-body {
+            padding: 2.5rem;
+        }
+        
+        .investment-amount {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+            line-height: 1.1;
+        }
+        
+        .investment-label {
+            font-size: 1rem;
+            color: var(--gray-dark);
+            margin-bottom: 2rem;
+        }
+        
+        .investment-feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 2rem;
+        }
+        
+        .investment-feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+        }
+        
+        .investment-feature-icon {
+            width: 24px;
+            height: 24px;
+            color: var(--primary);
+            flex-shrink: 0;
+        }
+        
+        .investment-feature-text {
+            font-size: 1rem;
+            color: var(--gray-dark);
+            line-height: 1.5;
+        }
+        
+        .investment-timeline {
+            margin-top: 4rem;
+        }
+        
+        .timeline {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin: 3rem 0;
+        }
+        
+        .timeline::before {
+            content: "";
+            position: absolute;
+            top: 24px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--gray-light);
+            z-index: 0;
+        }
+        
+        .timeline-item {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            width: 20%;
+        }
+        
+        .timeline-dot {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: white;
+            border: 2px solid var(--gray-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-weight: 700;
+            color: var(--gray-dark);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .timeline-item.active .timeline-dot {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-color: var(--primary);
+            color: white;
+            box-shadow: 0 0 0 5px rgba(69, 162, 158, 0.2);
+        }
+        
+        .timeline-item.completed .timeline-dot {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: white;
+        }
+        
+        .timeline-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            color: var(--dark);
+        }
+        
+        .timeline-date {
+            font-size: 0.875rem;
+            color: var(--gray-dark);
+        }
+        
+        .timeline-item.active .timeline-title {
+            color: var(--primary);
+            font-weight: 700;
+        }
+        
+        .use-of-funds {
+            margin-top: 4rem;
+        }
+        
+        .funds-chart {
+            display: flex;
+            height: 60px;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            margin: 2rem 0;
+        }
+        
+        .funds-segment {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .funds-segment:hover {
+            transform: scaleY(1.1);
+        }
+        
+        .funds-segment-1 {
+            background: var(--primary);
+            width: 40%;
+        }
+        
+        .funds-segment-2 {
+            background: var(--secondary);
+            width: 25%;
+        }
+        
+        .funds-segment-3 {
+            background: var(--violet);
+            width: 20%;
+        }
+        
+        .funds-segment-4 {
+            background: var(--indigo);
+            width: 15%;
+        }
+        
+        .funds-legend {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .funds-legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .funds-legend-color {
+            width: 16px;
+            height: 16px;
+            border-radius: 4px;
+            flex-shrink: 0;
+        }
+        
+        .funds-legend-color-1 {
+            background: var(--primary);
+        }
+        
+        .funds-legend-color-2 {
+            background: var(--secondary);
+        }
+        
+        .funds-legend-color-3 {
+            background: var(--violet);
+        }
+        
+        .funds-legend-color-4 {
+            background: var(--indigo);
+        }
+        
+        .funds-legend-text {
+            font-size: 0.875rem;
+            color: var(--gray-dark);
+        }
+        
+        .investment-cta {
+            margin-top: 4rem;
+            text-align: center;
+        }
+        
+        @media (max-width: 992px) {
+            .timeline {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 2rem;
+            }
+            
+            .timeline::before {
+                top: 0;
+                left: 24px;
+                width: 2px;
+                height: 100%;
+            }
+            
+            .timeline-item {
+                display: flex;
+                align-items: center;
+                gap: 1.5rem;
+                width: 100%;
+                text-align: left;
+            }
+            
+            .timeline-dot {
+                margin: 0;
+            }
+            
+            .funds-legend {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .funds-chart {
+                flex-direction: column;
+                height: auto;
+            }
+            
+            .funds-segment {
+                width: 100% !important;
+                height: 40px;
+                justify-content: flex-start;
+                padding-left: 1rem;
+            }
+            
+            .funds-legend {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+    <div class="container investment-section">
+        <div class="section-header animate-on-scroll">
+            <h2 class="section-title">Investment <span class="highlight-text">Opportunity</span></h2>
+            <p class="section-subtitle">Join us in building the protocol that will power the future of AI communication</p>
+        </div>
+        
+        <div class="investment-content">
+            <div class="grid">
+                <div class="col-6 col-md-12 animate-on-scroll delay-100">
+                    <div class="investment-card">
+                        <div class="investment-card-header">
+                            <h3 class="investment-card-title">Series A Funding Round</h3>
+                            <p class="investment-card-subtitle">Limited opportunity for qualified investors</p>
+                        </div>
+                        <div class="investment-card-body">
+                            <div class="investment-amount">$12M</div>
+                            <div class="investment-label">Raising at $80M valuation</div>
+                            
+                            <ul class="investment-feature-list">
+                                <li class="investment-feature-item">
+                                    <svg class="investment-feature-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                    <div class="investment-feature-text">$250K minimum investment</div>
+                                </li>
+                                <li class="investment-feature-item">
+                                    <svg class="investment-feature-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                    <div class="investment-feature-text">Preferred equity with 1x liquidation preference</div>
+                                </li>
+                                <li class="investment-feature-item">
+                                    <svg class="investment-feature-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                    <div class="investment-feature-text">Pro-rata rights for future rounds</div>
+                                </li>
+                                <li class="investment-feature-item">
+                                    <svg class="investment-feature-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                    <div class="investment-feature-text">Board observer rights for investments over $1M</div>
+                                </li>
+                                <li class="investment-feature-item">
+                                    <svg class="investment-feature-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                    <div class="investment-feature-text">60% of round already committed</div>
+                                </li>
+                            </ul>
+                            
+                            <div class="text-center">
+                                <a href="#cta-section" class="btn btn-primary btn-lg">Schedule Investor Call</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6 col-md-12 animate-on-scroll delay-200">
+                    <div class="investment-timeline">
+                        <h3 class="mb-4">Investment Timeline</h3>
+                        
+                        <div class="timeline">
+                            <div class="timeline-item completed">
+                                <div class="timeline-dot">1</div>
+                                <div>
+                                    <div class="timeline-title">Seed Round</div>
+                                    <div class="timeline-date">Q4 2023 - Completed</div>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item active">
+                                <div class="timeline-dot">2</div>
+                                <div>
+                                    <div class="timeline-title">Series A</div>
+                                    <div class="timeline-date">Q3 2024 - Current</div>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-dot">3</div>
+                                <div>
+                                    <div class="timeline-title">Series B</div>
+                                    <div class="timeline-date">Q2 2025 - Projected</div>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-dot">4</div>
+                                <div>
+                                    <div class="timeline-title">Series C</div>
+                                    <div class="timeline-date">Q1 2026 - Projected</div>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-dot">5</div>
+                                <div>
+                                    <div class="timeline-title">Exit</div>
+                                    <div class="timeline-date">2027 - Projected</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="use-of-funds">
+                            <h3 class="mb-4">Use of Funds</h3>
+                            
+                            <div class="funds-chart">
+                                <div class="funds-segment funds-segment-1">40%</div>
+                                <div class="funds-segment funds-segment-2">25%</div>
+                                <div class="funds-segment funds-segment-3">20%</div>
+                                <div class="funds-segment funds-segment-4">15%</div>
+                            </div>
+                            
+                            <div class="funds-legend">
+                                <div class="funds-legend-item">
+                                    <div class="funds-legend-color funds-legend-color-1"></div>
+                                    <div class="funds-legend-text">R&D and Engineering (40%)</div>
+                                </div>
+                                <div class="funds-legend-item">
+                                    <div class="funds-legend-color funds-legend-color-2"></div>
+                                    <div class="funds-legend-text">Sales and Marketing (25%)</div>
+                                </div>
+                                <div class="funds-legend-item">
+                                    <div class="funds-legend-color funds-legend-color-3"></div>
+                                    <div class="funds-legend-text">Operations (20%)</div>
+                                </div>
+                                <div class="funds-legend-item">
+                                    <div class="funds-legend-color funds-legend-color-4"></div>
+                                    <div class="funds-legend-text">Strategic Reserves (15%)</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="investment-cta animate-on-scroll delay-300">
+                <p class="mb-4">For detailed financial projections, cap table, and investor deck:</p>
+                <a href="#cta-section" class="btn btn-primary btn-lg">Request Investor Materials</a>
+            </div>
+        </div>
+    </div>
+</section>

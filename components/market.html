@@ -1,0 +1,350 @@
+<!-- Market Opportunity Section -->
+<section class="section section-light" id="market-section">
+    <style>
+        .market-section {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .market-section::before {
+            content: "";
+            position: absolute;
+            top: 20%;
+            right: -10%;
+            width: 50%;
+            height: 60%;
+            background: rgba(139, 92, 246, 0.05);
+            filter: blur(100px);
+            border-radius: 50%;
+            z-index: 0;
+        }
+        
+        .market-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .market-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+        
+        .market-stat {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+        }
+        
+        .market-stat:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .market-stat-value {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.1;
+        }
+        
+        .market-stat-label {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--gray-dark);
+        }
+        
+        .market-chart {
+            border-radius: var(--border-radius-lg);
+            background: white;
+            box-shadow: var(--shadow-md);
+            padding: 2rem;
+            height: 100%;
+            min-height: 400px;
+            position: relative;
+        }
+        
+        .chart-container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        
+        .chart-bars {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            height: 300px;
+            padding-bottom: 50px;
+            position: relative;
+        }
+        
+        .chart-bar {
+            width: 18%;
+            background: linear-gradient(180deg, var(--primary), var(--secondary));
+            border-radius: var(--border-radius-sm) var(--border-radius-sm) 0 0;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .chart-bar:hover {
+            transform: translateY(-10px);
+        }
+        
+        .chart-bar-1 { height: 20%; }
+        .chart-bar-2 { height: 40%; }
+        .chart-bar-3 { height: 60%; }
+        .chart-bar-4 { height: 80%; }
+        .chart-bar-5 { height: 100%; }
+        
+        .chart-label {
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--gray-dark);
+            white-space: nowrap;
+        }
+        
+        .chart-value {
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.875rem;
+            font-weight: 700;
+            color: var(--primary);
+            white-space: nowrap;
+        }
+        
+        .chart-axis {
+            position: absolute;
+            left: 0;
+            bottom: 50px;
+            width: 100%;
+            height: 2px;
+            background: var(--gray-light);
+        }
+        
+        .chart-axis-label {
+            position: absolute;
+            left: 0;
+            bottom: 10px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--gray-dark);
+        }
+        
+        .market-segments {
+            margin-top: 4rem;
+        }
+        
+        .segment-card {
+            border-radius: var(--border-radius-lg);
+            background: white;
+            box-shadow: var(--shadow-md);
+            padding: 2rem;
+            height: 100%;
+            transition: all 0.3s ease;
+        }
+        
+        .segment-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .segment-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .segment-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: rgba(139, 92, 246, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--violet);
+            flex-shrink: 0;
+        }
+        
+        .segment-icon svg {
+            width: 24px;
+            height: 24px;
+        }
+        
+        .segment-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin: 0;
+        }
+        
+        .segment-description {
+            color: var(--gray-dark);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+        
+        .segment-value {
+            font-weight: 700;
+            color: var(--violet);
+            font-size: 1.125rem;
+        }
+        
+        @media (max-width: 992px) {
+            .market-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .market-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .chart-bar {
+                width: 15%;
+            }
+            
+            .chart-label {
+                font-size: 0.75rem;
+            }
+        }
+    </style>
+
+    <div class="container market-section">
+        <div class="section-header animate-on-scroll">
+            <h2 class="section-title">Market <span class="highlight-text">Opportunity</span></h2>
+            <p class="section-subtitle">AHP Mod 2.0 is positioned to capture significant value in the rapidly growing AI market</p>
+        </div>
+        
+        <div class="market-content">
+            <div class="market-stats animate-on-scroll">
+                <div class="market-stat animate-on-scroll delay-100">
+                    <div class="market-stat-value">$407B</div>
+                    <div class="market-stat-label">Global AI Market by 2027</div>
+                </div>
+                
+                <div class="market-stat animate-on-scroll delay-200">
+                    <div class="market-stat-value">38%</div>
+                    <div class="market-stat-label">Annual Growth Rate</div>
+                </div>
+                
+                <div class="market-stat animate-on-scroll delay-300">
+                    <div class="market-stat-value">$82B</div>
+                    <div class="market-stat-label">Protocol-Level TAM</div>
+                </div>
+                
+                <div class="market-stat animate-on-scroll delay-400">
+                    <div class="market-stat-value">14x</div>
+                    <div class="market-stat-label">ROI for Early Investors</div>
+                </div>
+            </div>
+            
+            <div class="grid">
+                <div class="col-6 col-md-12 animate-on-scroll delay-500">
+                    <div class="market-chart">
+                        <h3 class="mb-4">AI Market Growth Projection</h3>
+                        <div class="chart-container">
+                            <div class="chart-bars">
+                                <div class="chart-bar chart-bar-1">
+                                    <div class="chart-label">2023</div>
+                                    <div class="chart-value">$86B</div>
+                                </div>
+                                <div class="chart-bar chart-bar-2">
+                                    <div class="chart-label">2024</div>
+                                    <div class="chart-value">$118B</div>
+                                </div>
+                                <div class="chart-bar chart-bar-3">
+                                    <div class="chart-label">2025</div>
+                                    <div class="chart-value">$196B</div>
+                                </div>
+                                <div class="chart-bar chart-bar-4">
+                                    <div class="chart-label">2026</div>
+                                    <div class="chart-value">$305B</div>
+                                </div>
+                                <div class="chart-bar chart-bar-5">
+                                    <div class="chart-label">2027</div>
+                                    <div class="chart-value">$407B</div>
+                                </div>
+                                <div class="chart-axis"></div>
+                                <div class="chart-axis-label">Year</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6 col-md-12 animate-on-scroll delay-600">
+                    <h3 class="mb-4">Market Penetration Strategy</h3>
+                    <p class="mb-4">AHP Mod 2.0 is targeting three key market segments with a combined TAM of $82B:</p>
+                    
+                    <div class="grid">
+                        <div class="col-12 mb-4">
+                            <div class="segment-card">
+                                <div class="segment-header">
+                                    <div class="segment-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                                        </svg>
+                                    </div>
+                                    <h4 class="segment-title">Enterprise AI Integration</h4>
+                                </div>
+                                <p class="segment-description">Large enterprises implementing AI across multiple departments and systems need standardized communication protocols to ensure consistency and security.</p>
+                                <div class="segment-value">$37B Market Opportunity</div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 mb-4">
+                            <div class="segment-card">
+                                <div class="segment-header">
+                                    <div class="segment-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                                        </svg>
+                                    </div>
+                                    <h4 class="segment-title">Developer Platforms</h4>
+                                </div>
+                                <p class="segment-description">Developer platforms and tools that need to integrate with multiple AI models can leverage AHP to provide universal compatibility with minimal integration effort.</p>
+                                <div class="segment-value">$28B Market Opportunity</div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12">
+                            <div class="segment-card">
+                                <div class="segment-header">
+                                    <div class="segment-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                                        </svg>
+                                    </div>
+                                    <h4 class="segment-title">AI Model Providers</h4>
+                                </div>
+                                <p class="segment-description">AI model providers can use AHP to standardize their interfaces, making their models more accessible to developers and enterprises while reducing integration costs.</p>
+                                <div class="segment-value">$17B Market Opportunity</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5 animate-on-scroll delay-700">
+                <a href="#traction-section" class="btn btn-primary btn-lg">See Our Traction</a>
+            </div>
+        </div>
+    </div>
+</section>

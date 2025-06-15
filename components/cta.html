@@ -1,0 +1,292 @@
+<!-- Call to Action Section -->
+<section class="section section-dark" id="cta-section">
+    <style>
+        .cta-section {
+            background: linear-gradient(135deg, var(--charcoal), var(--dark));
+            position: relative;
+            overflow: hidden;
+            padding: 6rem 0;
+        }
+        
+        .cta-section::before {
+            content: "";
+            position: absolute;
+            top: -10%;
+            right: -10%;
+            width: 60%;
+            height: 60%;
+            background: rgba(99, 102, 241, 0.05);
+            filter: blur(100px);
+            border-radius: 50%;
+            z-index: 0;
+        }
+        
+        .cta-section::after {
+            content: "";
+            position: absolute;
+            bottom: -10%;
+            left: -10%;
+            width: 60%;
+            height: 60%;
+            background: rgba(69, 162, 158, 0.05);
+            filter: blur(100px);
+            border-radius: 50%;
+            z-index: 0;
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .cta-title {
+            font-size: 3rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        
+        .cta-subtitle {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 3rem;
+            line-height: 1.6;
+        }
+        
+        .cta-highlight {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .btn-cta-primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.125rem;
+            font-weight: 600;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-lg);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-cta-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(69, 162, 158, 0.2);
+        }
+        
+        .btn-cta-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 1rem 2rem;
+            font-size: 1.125rem;
+            font-weight: 600;
+            border-radius: var(--border-radius-lg);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-cta-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+        }
+        
+        .investment-terms {
+            background: rgba(26, 27, 38, 0.5);
+            backdrop-filter: blur(10px);
+            border-radius: var(--border-radius-lg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 2.5rem;
+            margin-top: 4rem;
+        }
+        
+        .terms-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        .terms-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        
+        .term-item {
+            text-align: center;
+        }
+        
+        .term-value {
+            font-size: 2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+        
+        .term-label {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .limited-offer {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 0.5rem 1.5rem;
+            background: rgba(139, 92, 246, 0.1);
+            border-radius: var(--border-radius-full);
+            color: var(--violet);
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+        
+        .testimonial-highlight {
+            margin-top: 4rem;
+            padding: 2rem;
+            background: rgba(26, 27, 38, 0.3);
+            border-radius: var(--border-radius-lg);
+            border-left: 4px solid var(--primary);
+            position: relative;
+        }
+        
+        .testimonial-highlight::before {
+            content: """;
+            position: absolute;
+            left: 1rem;
+            top: -1rem;
+            font-size: 4rem;
+            color: rgba(69, 162, 158, 0.3);
+            font-family: serif;
+            line-height: 1;
+        }
+        
+        .testimonial-highlight-text {
+            font-size: 1.25rem;
+            font-style: italic;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+        
+        .testimonial-highlight-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .testimonial-highlight-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+        
+        .testimonial-highlight-info h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+            color: white;
+        }
+        
+        .testimonial-highlight-info p {
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .cta-title {
+                font-size: 2.5rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+            }
+            
+            .terms-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+    </style>
+
+    <div class="container cta-section">
+        <div class="cta-content animate-on-scroll">
+            <h2 class="cta-title">Join the <span class="cta-highlight">Protocol Revolution</span></h2>
+            <p class="cta-subtitle">AHP Mod 2.0 is positioned to become the standard protocol for AI communication. Invest now to be part of this transformative technology.</p>
+            
+            <div class="cta-buttons animate-on-scroll delay-100">
+                <a href="#" class="btn-cta-primary">Schedule Investor Call</a>
+                <a href="#" class="btn-cta-secondary">Download Investor Deck</a>
+            </div>
+            
+            <div class="investment-terms animate-on-scroll delay-200">
+                <h3 class="terms-title">Investment Terms</h3>
+                
+                <div class="terms-grid">
+                    <div class="term-item">
+                        <div class="term-value">$12M</div>
+                        <div class="term-label">Raising</div>
+                    </div>
+                    
+                    <div class="term-item">
+                        <div class="term-value">$80M</div>
+                        <div class="term-label">Valuation</div>
+                    </div>
+                    
+                    <div class="term-item">
+                        <div class="term-value">$250K</div>
+                        <div class="term-label">Minimum Investment</div>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <div class="limited-offer animate-on-scroll delay-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" style="margin-right: 0.5rem; vertical-align: -2px;">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                            <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
+                        </svg>
+                        Limited opportunity - 60% of round already committed
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-highlight animate-on-scroll delay-400">
+                <p class="testimonial-highlight-text">
+                    "AHP Mod 2.0 represents the most promising protocol-level innovation I've seen in the AI space. The team's execution and vision are exceptional, and the market timing couldn't be better."
+                </p>
+                <div class="testimonial-highlight-author">
+                    <div class="testimonial-highlight-avatar">RK</div>
+                    <div class="testimonial-highlight-info">
+                        <h4>Robert Kim</h4>
+                        <p>Partner, Sequoia Capital</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

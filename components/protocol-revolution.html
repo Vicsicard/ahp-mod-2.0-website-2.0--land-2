@@ -1,0 +1,219 @@
+<!-- Protocol Revolution Section -->
+<section class="section section-light" id="protocol-revolution">
+    <style>
+        .protocol-revolution {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .protocol-revolution::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 70%;
+            height: 100%;
+            background: rgba(69, 162, 158, 0.05);
+            filter: blur(100px);
+            border-radius: 50%;
+            z-index: 0;
+        }
+        
+        .protocol-card {
+            border-radius: var(--border-radius-lg);
+            padding: 2.5rem;
+            background-color: white;
+            box-shadow: var(--shadow-md);
+            height: 100%;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .protocol-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .protocol-icon {
+            width: 64px;
+            height: 64px;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+        
+        .protocol-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        
+        .protocol-card p {
+            color: var(--gray-dark);
+            margin-bottom: 1.5rem;
+        }
+        
+        .protocol-card .stats {
+            margin-top: auto;
+            font-weight: 700;
+            color: var(--violet);
+        }
+        
+        .timeline-wrapper {
+            position: relative;
+            margin-top: 4rem;
+            padding-bottom: 2rem;
+        }
+        
+        .timeline {
+            position: relative;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            border-radius: var(--border-radius-full);
+            margin: 3rem 0;
+        }
+        
+        .timeline-point {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            box-shadow: 0 0 0 4px rgba(69, 162, 158, 0.2);
+        }
+        
+        .timeline-point-1 { left: 0%; }
+        .timeline-point-2 { left: 25%; }
+        .timeline-point-3 { left: 50%; }
+        .timeline-point-4 { left: 75%; }
+        .timeline-point-5 { left: 100%; transform: translate(-100%, -50%); }
+        
+        .timeline-label {
+            position: absolute;
+            white-space: nowrap;
+        }
+        
+        .timeline-label-top {
+            bottom: 100%;
+            margin-bottom: 1rem;
+            transform: translateX(-50%);
+        }
+        
+        .timeline-label-bottom {
+            top: 100%;
+            margin-top: 1rem;
+            transform: translateX(-50%);
+        }
+        
+        .timeline-year {
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 0.25rem;
+        }
+        
+        .timeline-protocol {
+            font-size: 0.875rem;
+            color: var(--primary);
+        }
+        
+        .timeline-value {
+            font-size: 0.875rem;
+            color: var(--gray-dark);
+        }
+        
+        @media (max-width: 992px) {
+            .protocol-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .timeline-label {
+                font-size: 0.75rem;
+            }
+        }
+    </style>
+
+    <div class="container protocol-revolution">
+        <div class="section-header animate-on-scroll">
+            <h2 class="section-title">Why Protocol-Level Solutions Create <span class="highlight-text">Outsized Returns</span></h2>
+            <p class="section-subtitle">The most valuable technology companies are built on protocol foundations that create network effects and lasting value</p>
+        </div>
+        
+        <div class="grid protocol-grid">
+            <div class="col-4 col-md-4 col-sm-12 animate-on-scroll delay-100">
+                <div class="protocol-card">
+                    <svg class="protocol-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                    <h3>Historical Impact</h3>
+                    <p>Protocols like HTTP, TCP/IP, and SMTP created the foundation for trillion-dollar ecosystems by standardizing communication between systems.</p>
+                    <div class="stats">$30+ Trillion in Value Created</div>
+                </div>
+            </div>
+            
+            <div class="col-4 col-md-4 col-sm-12 animate-on-scroll delay-200">
+                <div class="protocol-card">
+                    <svg class="protocol-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                    <h3>Network Effects</h3>
+                    <p>Protocols create winner-take-most markets through network effects. Each new participant increases the value for all existing users exponentially.</p>
+                    <div class="stats">Exponential Growth Curve</div>
+                </div>
+            </div>
+            
+            <div class="col-4 col-md-4 col-sm-12 animate-on-scroll delay-300">
+                <div class="protocol-card">
+                    <svg class="protocol-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <h3>Value Capture</h3>
+                    <p>Protocol creators like Stripe, Twilio, and OAuth have captured enormous value by becoming the standard for their respective domains.</p>
+                    <div class="stats">$100B+ Market Cap Companies</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="timeline-wrapper animate-on-scroll delay-400">
+            <h3 class="text-center mb-4">Protocol Adoption & Value Creation Timeline</h3>
+            
+            <div class="timeline">
+                <div class="timeline-point timeline-point-1"></div>
+                <div class="timeline-point timeline-point-2"></div>
+                <div class="timeline-point timeline-point-3"></div>
+                <div class="timeline-point timeline-point-4"></div>
+                <div class="timeline-point timeline-point-5"></div>
+                
+                <div class="timeline-label timeline-label-top" style="left: 0%">
+                    <div class="timeline-year">1983</div>
+                    <div class="timeline-protocol">TCP/IP</div>
+                </div>
+                
+                <div class="timeline-label timeline-label-bottom" style="left: 25%">
+                    <div class="timeline-year">1991</div>
+                    <div class="timeline-protocol">HTTP</div>
+                </div>
+                
+                <div class="timeline-label timeline-label-top" style="left: 50%">
+                    <div class="timeline-year">2006</div>
+                    <div class="timeline-protocol">OAuth</div>
+                </div>
+                
+                <div class="timeline-label timeline-label-bottom" style="left: 75%">
+                    <div class="timeline-year">2010</div>
+                    <div class="timeline-protocol">REST APIs</div>
+                </div>
+                
+                <div class="timeline-label timeline-label-top" style="left: 100%">
+                    <div class="timeline-year">2025</div>
+                    <div class="timeline-protocol">AHP Mod 2.0</div>
+                    <div class="timeline-value">You Are Here</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

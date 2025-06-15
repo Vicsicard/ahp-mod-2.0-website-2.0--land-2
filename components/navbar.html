@@ -1,0 +1,317 @@
+<!-- Navigation Bar -->
+<header class="navbar">
+    <style>
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 1.5rem 0;
+            transition: all 0.3s ease;
+            background-color: var(--charcoal);
+        }
+
+        .navbar.scrolled {
+            background: rgba(11, 12, 16, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .navbar-logo {
+            display: flex;
+            align-items: center;
+            color: var(--violet);
+            font-weight: 700;
+            font-size: 1.75rem;
+            text-decoration: none;
+            letter-spacing: -0.025em;
+            background: var(--gradient-violet);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .site-indicator {
+            font-size: 0.75rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            padding: 0.25rem 0.5rem;
+            border: 2px solid var(--primary);
+            border-radius: 0.25rem;
+            margin-left: 0.75rem;
+            letter-spacing: 0.05em;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(69, 162, 158, 0.4);
+            }
+            70% {
+                box-shadow: 0 0 0 6px rgba(69, 162, 158, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(69, 162, 158, 0);
+            }
+        }
+
+        .navbar-links {
+            display: none;
+        }
+
+        @media (min-width: 768px) {
+            .navbar-links {
+                display: flex;
+                gap: 2.5rem;
+            }
+        }
+
+        .navbar-link {
+            color: white;
+            transition: all 0.2s ease;
+            font-weight: 500;
+            font-size: 1.0625rem;
+            text-decoration: none;
+            opacity: 0.85;
+        }
+
+        .navbar-link:hover {
+            color: white;
+            opacity: 1;
+            transform: translateY(-2px);
+        }
+
+        .navbar-link.active {
+            color: white;
+            opacity: 1;
+        }
+
+        .navbar-cta {
+            display: none;
+        }
+
+        @media (min-width: 768px) {
+            .navbar-cta {
+                display: block;
+            }
+        }
+
+        .navbar-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+        }
+
+        @media (min-width: 768px) {
+            .navbar-toggle {
+                display: none;
+            }
+        }
+
+        .navbar-toggle svg {
+            width: 24px;
+            height: 24px;
+            color: white;
+        }
+
+        .navbar-mobile {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 80%;
+            max-width: 400px;
+            height: 100vh;
+            background-color: var(--dark);
+            z-index: 200;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .navbar-mobile.active {
+            right: 0;
+        }
+
+        .navbar-mobile-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .navbar-mobile-logo {
+            color: var(--violet);
+            font-weight: 700;
+            font-size: 1.5rem;
+            background: var(--gradient-violet);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .navbar-mobile-close {
+            width: 44px;
+            height: 44px;
+            color: white;
+            cursor: pointer;
+            background: transparent;
+            border: none;
+        }
+
+        .navbar-mobile-links {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .navbar-mobile-link {
+            color: white;
+            font-size: 1.25rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .navbar-mobile-link:hover {
+            opacity: 0.8;
+        }
+
+        .navbar-mobile-cta {
+            margin-top: auto;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 150;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s ease;
+        }
+
+        .overlay.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+    </style>
+
+    <div class="navbar-container">
+        <a href="#" class="navbar-logo">
+            AHP <span class="site-indicator">INVESTORS</span>
+        </a>
+
+        <nav class="navbar-links">
+            <a href="#protocol-revolution" class="navbar-link">Protocol</a>
+            <a href="#problem-section" class="navbar-link">Problem</a>
+            <a href="#solution-section" class="navbar-link">Solution</a>
+            <a href="#moat-section" class="navbar-link">Moat</a>
+            <a href="#market-section" class="navbar-link">Market</a>
+            <a href="#traction-section" class="navbar-link">Traction</a>
+            <a href="#team-section" class="navbar-link">Team</a>
+        </nav>
+
+        <div class="navbar-cta">
+            <a href="#cta-section" class="btn btn-investor btn-sm">Request Investor Deck</a>
+        </div>
+
+        <button class="navbar-toggle" id="navbar-toggle">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+        </button>
+    </div>
+
+    <div class="navbar-mobile" id="navbar-mobile">
+        <div class="navbar-mobile-header">
+            <div class="navbar-mobile-logo">AHP</div>
+            <button class="navbar-mobile-close" id="navbar-mobile-close">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+
+        <div class="navbar-mobile-links">
+            <a href="#protocol-revolution" class="navbar-mobile-link">Protocol</a>
+            <a href="#problem-section" class="navbar-mobile-link">Problem</a>
+            <a href="#solution-section" class="navbar-mobile-link">Solution</a>
+            <a href="#moat-section" class="navbar-mobile-link">Moat</a>
+            <a href="#market-section" class="navbar-mobile-link">Market</a>
+            <a href="#traction-section" class="navbar-mobile-link">Traction</a>
+            <a href="#team-section" class="navbar-mobile-link">Team</a>
+        </div>
+
+        <div class="navbar-mobile-cta">
+            <a href="#cta-section" class="btn btn-investor btn-lg" style="width: 100%;">Request Investor Deck</a>
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+</header>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Navbar scroll effect
+        const navbar = document.querySelector('.navbar');
+        
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        // Mobile menu functionality
+        const navbarToggle = document.getElementById('navbar-toggle');
+        const navbarMobile = document.getElementById('navbar-mobile');
+        const mobileMenuClose = document.getElementById('navbar-mobile-close');
+        const overlay = document.getElementById('overlay');
+        
+        function openMobileMenu() {
+            navbarMobile.classList.add('active');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeMobileMenu() {
+            navbarMobile.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        
+        navbarToggle.addEventListener('click', openMobileMenu);
+        mobileMenuClose.addEventListener('click', closeMobileMenu);
+        overlay.addEventListener('click', closeMobileMenu);
+        
+        // Close mobile menu when clicking on a link
+        const mobileLinks = document.querySelectorAll('.navbar-mobile-link');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+    });
+</script>
