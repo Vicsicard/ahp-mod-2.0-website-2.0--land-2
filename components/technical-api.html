@@ -1,0 +1,267 @@
+<!-- API Reference Panel Content -->
+<style>
+    .api-section {
+        position: relative;
+    }
+    
+    .api-endpoint {
+        background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(255,255,255,0.95));
+        border-radius: 12px;
+        padding: 1.75rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -4px rgba(0, 0, 0, 0.02);
+        border: 1px solid rgba(226, 232, 240, 0.7);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .api-endpoint:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+    }
+    
+    .api-endpoint::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 4px;
+        height: 100%;
+        background: linear-gradient(to bottom, var(--primary), var(--secondary));
+    }
+    
+    .api-method {
+        display: inline-block;
+        padding: 0.35rem 0.85rem;
+        border-radius: 8px;
+        font-weight: 700;
+        font-size: 0.875rem;
+        margin-right: 1rem;
+        letter-spacing: 0.5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    
+    .api-method-post {
+        background: linear-gradient(135deg, #10B981, #059669);
+        color: white;
+    }
+    
+    .api-method-get {
+        background: linear-gradient(135deg, #3B82F6, #2563EB);
+        color: white;
+    }
+    
+    .api-url {
+        font-family: 'Courier New', monospace;
+        font-size: 1rem;
+        color: var(--dark);
+        font-weight: 600;
+        position: relative;
+        padding: 0.25rem 0;
+    }
+    
+    .api-description {
+        margin-top: 1rem;
+        color: var(--gray-dark);
+        line-height: 1.7;
+        border-top: 1px solid rgba(226, 232, 240, 0.7);
+        padding-top: 1rem;
+    }
+    
+    .api-params {
+        margin-top: 1.5rem;
+        background: rgba(241, 245, 249, 0.5);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+    
+    .api-params-header {
+        background: rgba(226, 232, 240, 0.5);
+        padding: 0.75rem 1.25rem;
+        font-weight: 600;
+        color: var(--dark);
+        display: flex;
+    }
+    
+    .api-param {
+        display: flex;
+        padding: 1rem 1.25rem;
+        border-bottom: 1px solid rgba(226, 232, 240, 0.7);
+    }
+    
+    .api-param:last-child {
+        border-bottom: none;
+    }
+    
+    .api-param-name {
+        width: 30%;
+        font-weight: 600;
+        color: var(--dark);
+    }
+    
+    .api-param-type {
+        width: 20%;
+        color: var(--violet);
+        font-family: 'Courier New', monospace;
+        font-size: 0.875rem;
+        font-weight: 500;
+    }
+    
+    .api-param-desc {
+        width: 50%;
+        color: var(--gray-dark);
+        line-height: 1.6;
+    }
+    
+    .api-response {
+        margin-top: 1.5rem;
+        background: rgba(241, 245, 249, 0.5);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+    
+    .api-response-header {
+        background: rgba(226, 232, 240, 0.5);
+        padding: 0.75rem 1.25rem;
+        font-weight: 600;
+        color: var(--dark);
+        display: flex;
+    }
+    
+    .api-response-example {
+        padding: 1.25rem;
+        font-family: 'Courier New', monospace;
+        font-size: 0.875rem;
+        line-height: 1.6;
+        color: var(--dark);
+    }
+    
+    .api-badge {
+        display: inline-block;
+        padding: 0.25rem 0.75rem;
+        border-radius: 9999px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        margin-left: 1rem;
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        color: white;
+        vertical-align: middle;
+    }
+    
+    @media (max-width: 992px) {
+        .api-param {
+            flex-direction: column;
+        }
+        
+        .api-param-name, .api-param-type, .api-param-desc {
+            width: 100%;
+            margin-bottom: 0.5rem;
+        }
+        
+        .api-param-desc {
+            margin-bottom: 0;
+        }
+    }
+</style>
+
+<div class="grid">
+    <div class="col-12 animate-on-scroll">
+        <h3 class="mb-4">API Reference</h3>
+        <p class="mb-4">AHP Mod 2.0 exposes a powerful yet intuitive API that allows developers to integrate the protocol into any application with minimal effort:</p>
+        
+        <div class="api-section">
+            <div class="api-endpoint">
+                <div>
+                    <span class="api-method api-method-post">POST</span>
+                    <span class="api-url">/api/v1/process</span>
+                    <span class="api-badge">Core</span>
+                </div>
+                <div class="api-description">Process a human message and return an AI response using the AHP protocol. This endpoint handles the complete translation process across all protocol layers.</div>
+                
+                <div class="api-params">
+                    <div class="api-params-header">
+                        <div class="api-param-name">Parameter</div>
+                        <div class="api-param-type">Type</div>
+                        <div class="api-param-desc">Description</div>
+                    </div>
+                    <div class="api-param">
+                        <div class="api-param-name">message</div>
+                        <div class="api-param-type">string</div>
+                        <div class="api-param-desc">The human message to process through the protocol</div>
+                    </div>
+                    <div class="api-param">
+                        <div class="api-param-name">context</div>
+                        <div class="api-param-type">object</div>
+                        <div class="api-param-desc">Optional context information to enhance intent recognition</div>
+                    </div>
+                    <div class="api-param">
+                        <div class="api-param-name">model</div>
+                        <div class="api-param-type">string</div>
+                        <div class="api-param-desc">Target AI model identifier (e.g., "gpt-4", "claude-3")</div>
+                    </div>
+                    <div class="api-param">
+                        <div class="api-param-name">options</div>
+                        <div class="api-param-type">object</div>
+                        <div class="api-param-desc">Advanced configuration options for protocol behavior</div>
+                    </div>
+                </div>
+                
+                <div class="api-response">
+                    <div class="api-response-header">Response</div>
+                    <div class="api-response-example">
+                        {<br>
+                        &nbsp;&nbsp;"id": "msg_12345",<br>
+                        &nbsp;&nbsp;"processed_message": "Processed human message",<br>
+                        &nbsp;&nbsp;"ai_response": "AI system response",<br>
+                        &nbsp;&nbsp;"intent": {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;"primary": "query",<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;"confidence": 0.95<br>
+                        &nbsp;&nbsp;},<br>
+                        &nbsp;&nbsp;"model_used": "gpt-4",<br>
+                        &nbsp;&nbsp;"processing_time": 0.45<br>
+                        }
+                    </div>
+                </div>
+            </div>
+            
+            <div class="api-endpoint">
+                <div>
+                    <span class="api-method api-method-get">GET</span>
+                    <span class="api-url">/api/v1/models</span>
+                </div>
+                <div class="api-description">List all available AI models that can be used with the protocol, including capabilities and compatibility information.</div>
+                
+                <div class="api-response">
+                    <div class="api-response-header">Response</div>
+                    <div class="api-response-example">
+                        {<br>
+                        &nbsp;&nbsp;"models": [<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"id": "gpt-4",<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"provider": "OpenAI",<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"capabilities": ["text", "reasoning", "code"],<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"compatibility_score": 0.98<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;},<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"id": "claude-3",<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"provider": "Anthropic",<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"capabilities": ["text", "reasoning", "analysis"],<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"compatibility_score": 0.96<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                        &nbsp;&nbsp;]<br>
+                        }
+                    </div>
+                </div>
+            </div>
+            
+            <div class="api-endpoint">
+                <div>
+                    <span class="api-method api-method-post">POST</span>
+                    <span class="api-url">/api/v1/analyze</span>
+                </div>
+                <div class="api-description">Analyze human communication to extract intent and context without generating an AI response. Useful for preprocessing and understanding user inputs.</div>
+            </div>
+        </div>
+    </div>
+</div>

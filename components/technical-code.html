@@ -1,0 +1,265 @@
+<!-- Code Examples Panel Content -->
+<style>
+    .code-section {
+        position: relative;
+    }
+    
+    .code-block-container {
+        background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(255,255,255,0.95));
+        border-radius: 12px;
+        padding: 0.5rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -4px rgba(0, 0, 0, 0.02);
+        border: 1px solid rgba(226, 232, 240, 0.7);
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .code-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.75rem 1rem;
+        background: rgba(241, 245, 249, 0.7);
+        border-radius: 8px;
+        margin-bottom: 0.5rem;
+    }
+    
+    .code-language {
+        font-weight: 600;
+        color: var(--dark);
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    .code-language-icon {
+        width: 18px;
+        height: 18px;
+    }
+    
+    .code-actions {
+        display: flex;
+        gap: 0.5rem;
+    }
+    
+    .code-action-button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: var(--gray-dark);
+        transition: all 0.2s ease;
+        width: 28px;
+        height: 28px;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .code-action-button:hover {
+        background: rgba(226, 232, 240, 0.7);
+        color: var(--dark);
+    }
+    
+    .code-block {
+        background: var(--dark);
+        color: white;
+        border-radius: 8px;
+        padding: 1.5rem;
+        font-family: 'Courier New', monospace;
+        font-size: 0.875rem;
+        line-height: 1.6;
+        overflow-x: auto;
+        position: relative;
+    }
+    
+    .code-block pre {
+        margin: 0;
+        white-space: pre;
+    }
+    
+    .code-comment {
+        color: #6B7280;
+    }
+    
+    .code-keyword {
+        color: #8B5CF6;
+    }
+    
+    .code-string {
+        color: #10B981;
+    }
+    
+    .code-function {
+        color: #3B82F6;
+    }
+    
+    .code-number {
+        color: #F59E0B;
+    }
+    
+    .code-example-tabs {
+        display: flex;
+        gap: 0.5rem;
+        margin-bottom: 1.5rem;
+        border-bottom: 1px solid rgba(203, 213, 225, 0.3);
+        padding-bottom: 0.75rem;
+        overflow-x: auto;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+    
+    .code-example-tabs::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .code-example-tab {
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        font-weight: 500;
+        font-size: 0.875rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        white-space: nowrap;
+    }
+    
+    .code-example-tab.active {
+        background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1));
+        color: var(--violet);
+        font-weight: 600;
+    }
+    
+    .code-example-tab:not(.active) {
+        color: var(--gray-dark);
+    }
+    
+    .code-example-tab:not(.active):hover {
+        background: rgba(241, 245, 249, 0.7);
+        color: var(--dark);
+    }
+    
+    .code-example-content {
+        display: none;
+    }
+    
+    .code-example-content.active {
+        display: block;
+        animation: fadeIn 0.5s ease;
+    }
+    
+    .code-note {
+        margin-top: 1.5rem;
+        padding: 1rem 1.25rem;
+        background: rgba(241, 245, 249, 0.5);
+        border-left: 3px solid var(--primary);
+        border-radius: 0 8px 8px 0;
+        color: var(--gray-dark);
+        line-height: 1.6;
+    }
+    
+    .code-note strong {
+        color: var(--dark);
+    }
+</style>
+
+<div class="grid">
+    <div class="col-12 animate-on-scroll">
+        <h3 class="mb-4">Code Examples</h3>
+        <p class="mb-4">Integrating AHP Mod 2.0 into your application is straightforward with our client libraries available for multiple languages:</p>
+        
+        <div class="code-example-tabs">
+            <div class="code-example-tab active" data-code-tab="javascript">JavaScript</div>
+            <div class="code-example-tab" data-code-tab="python">Python</div>
+            <div class="code-example-tab" data-code-tab="java">Java</div>
+        </div>
+        
+        <div class="code-section">
+            <div class="code-example-content active" id="javascript-example">
+                <div class="code-block-container">
+                    <div class="code-header">
+                        <div class="code-language">
+                            <svg class="code-language-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <path fill="currentColor" d="M0 32v448h448V32H0zm243.8 349.4c0 43.6-25.6 63.5-62.9 63.5-33.7 0-53.2-17.4-63.2-38.5l34.3-20.7c6.6 11.7 12.6 21.6 27.1 21.6 13.8 0 22.6-5.4 22.6-26.5V237.7h42.1v143.7zm99.6 63.5c-39.1 0-64.4-18.6-76.7-43l34.3-19.8c9 14.7 20.8 25.6 41.5 25.6 17.4 0 28.6-8.7 28.6-20.8 0-14.4-11.4-19.5-30.7-28l-10.5-4.5c-30.4-12.9-50.5-29.2-50.5-63.5 0-31.6 24.1-55.6 61.6-55.6 26.8 0 46 9.3 59.8 33.7L368 290c-7.2-12.9-15-18-27.1-18-12.3 0-20.1 7.8-20.1 18 0 12.6 7.8 17.7 25.9 25.6l10.5 4.5c35.8 15.3 55.9 31 55.9 66.2 0 37.8-29.8 58.6-69.7 58.6z"/>
+                            </svg>
+                            JavaScript
+                        </div>
+                        <div class="code-actions">
+                            <button class="code-action-button" title="Copy code">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+                                    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="code-block">
+                        <pre><span class="code-comment">// Initialize the AHP client</span>
+<span class="code-keyword">const</span> ahp = <span class="code-keyword">new</span> <span class="code-function">AHPClient</span>({
+  apiKey: <span class="code-string">"your-api-key"</span>,
+  version: <span class="code-string">"2.0"</span>
+});
+
+<span class="code-comment">// Process a human message</span>
+<span class="code-keyword">async</span> <span class="code-function">function</span> <span class="code-function">processMessage</span>(message) {
+  <span class="code-keyword">const</span> response = <span class="code-keyword">await</span> ahp.<span class="code-function">process</span>({
+    message,
+    model: <span class="code-string">"gpt-4"</span>,
+    context: {
+      user: currentUser,
+      conversation: conversationHistory
+    }
+  });
+
+  <span class="code-comment">// Handle the AI response</span>
+  <span class="code-keyword">if</span> (response.intent.primary === <span class="code-string">"query"</span>) {
+    <span class="code-function">displayResponse</span>(response.ai_response);
+  } <span class="code-keyword">else</span> <span class="code-keyword">if</span> (response.intent.primary === <span class="code-string">"action"</span>) {
+    <span class="code-function">performAction</span>(response.action_details);
+  }
+
+  <span class="code-keyword">return</span> response;
+}</pre>
+                    </div>
+                </div>
+                
+                <div class="code-note">
+                    <strong>Note:</strong> The JavaScript client supports both browser and Node.js environments. For browser usage, we recommend using our CDN-hosted version for optimal performance.
+                </div>
+            </div>
+            
+            <div class="code-example-content" id="python-example">
+                <!-- Python example will be added in the next file -->
+            </div>
+            
+            <div class="code-example-content" id="java-example">
+                <!-- Java example will be added in the next file -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const tabs = document.querySelectorAll('.code-example-tab');
+        const contents = document.querySelectorAll('.code-example-content');
+        
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const target = tab.dataset.codeTab;
+                
+                // Update active tab
+                tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                
+                // Update active content
+                contents.forEach(content => {
+                    content.classList.remove('active');
+                    if (content.id === `${target}-example`) {
+                        content.classList.add('active');
+                    }
+                });
+            });
+        });
+    });
+</script>

@@ -121,28 +121,88 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 2rem;
+            gap: 1.5rem;
             margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
-
+        
         .social-proof-item {
             display: flex;
             align-items: center;
-            gap: 0.75rem;
+            gap: 0.5rem;
         }
-
+        
         .social-proof-icon {
-            width: 24px;
-            height: 24px;
+            width: 1.25rem;
+            height: 1.25rem;
             color: var(--primary);
         }
-
+        
         .social-proof-text {
             font-size: 0.9375rem;
-            font-weight: 600;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .protocol-explainer {
+            margin-top: 3rem;
+            padding: 2rem;
+            background: rgba(30, 30, 35, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .protocol-explainer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(139, 92, 246, 0.05) 0%, transparent 70%);
+            z-index: 0;
+        }
+        
+        .protocol-explainer-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .protocol-explainer h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #8b5cf6, #c4b5fd);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+        
+        .protocol-explainer p {
+            font-size: 1.1rem;
+            line-height: 1.7;
             color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .protocol-explainer {
+                padding: 1.5rem;
+                margin-top: 2rem;
+            }
+            
+            .protocol-explainer h3 {
+                font-size: 1.25rem;
+            }
+            
+            .protocol-explainer p {
+                font-size: 1rem;
+            }
         }
 
         .hero-animation {
@@ -273,45 +333,10 @@
             <a href="#protocol-revolution" class="btn btn-secondary btn-lg">Learn More</a>
         </div>
         
-        <div class="hero-animation">
-            <div class="hero-animation-content">
-                <div class="protocol-animation">
-                    <div class="protocol-node">H</div>
-                    <div class="protocol-line"></div>
-                    <div class="protocol-node">AI</div>
-                </div>
+        <div class="protocol-explainer">
+            <div class="protocol-explainer-content">
+                <p>A foundational layer that sets the rules for how systems—and now AI—connect and communicate. It helps your website or data speak clearly to AI models, making it easier for apps, platforms, and intelligent tools to understand and work with your content.</p>
             </div>
         </div>
-        
-        <div class="social-proof">
-            <div class="social-proof-item">
-                <svg class="social-proof-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <span class="social-proof-text">OpenAI Integration</span>
-            </div>
-            
-            <div class="social-proof-item">
-                <svg class="social-proof-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <span class="social-proof-text">Anthropic Integration</span>
-            </div>
-            
-            <div class="social-proof-item">
-                <svg class="social-proof-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <span class="social-proof-text">2,500+ Developer Stars</span>
-            </div>
-        </div>
-    </div>
-    
-    <div class="floating-nav">
-        <a href="#protocol-revolution" class="floating-nav-link">Protocol Architecture</a>
-        <a href="#market-section" class="floating-nav-link">Market</a>
-        <a href="#moat-section" class="floating-nav-link">Moat</a>
-        <a href="#investment-section" class="floating-nav-link">Investment Terms</a>
-        <a href="#cta-section" class="floating-nav-link">Contact</a>
     </div>
 </section>

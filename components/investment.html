@@ -176,13 +176,67 @@
             color: var(--gray-dark);
         }
         
-        .timeline-item.active .timeline-title {
+        .timeline-item.active .timeline-date {
+            color: var(--gray);
+            font-size: 0.875rem;
+        }
+        
+        .safe-benefits {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .safe-benefit-item {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: var(--border-radius-md);
+            padding: 1.5rem;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .safe-benefit-item h4 {
             color: var(--primary);
-            font-weight: 700;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+        
+        .safe-benefit-item p {
+            margin-bottom: 0;
+            color: var(--gray-dark);
+        }
+        
+        .safe-terms {
+            background: rgba(69, 162, 158, 0.1);
+            border-radius: var(--border-radius-md);
+            padding: 1.5rem;
+        }
+        
+        .safe-term-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid rgba(69, 162, 158, 0.2);
+        }
+        
+        .safe-term-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .safe-term-label {
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        .safe-term-value {
+            color: var(--primary);
+            font-weight: 500;
         }
         
         .use-of-funds {
-            margin-top: 4rem;
+            margin-top: 2rem;
         }
         
         .funds-chart {
@@ -334,48 +388,56 @@
                 <div class="col-6 col-md-12 animate-on-scroll delay-100">
                     <div class="investment-card">
                         <div class="investment-card-header">
-                            <h3 class="investment-card-title">Series A Funding Round</h3>
-                            <p class="investment-card-subtitle">Limited opportunity for qualified investors</p>
+                            <h3 class="investment-card-title">YC SAFE Structure</h3>
+                            <p class="investment-card-subtitle">Simple Agreement for Future Equity</p>
                         </div>
                         <div class="investment-card-body">
-                            <div class="investment-amount">$12M</div>
-                            <div class="investment-label">Raising at $80M valuation</div>
+                            <div class="investment-amount">$500K</div>
+                            <div class="investment-label">Raising with $5M valuation cap</div>
+                            
+                            <p class="mb-4">We're raising $500,000 using Y Combinator's industry-standard Post-Money SAFE — the same structure used by startups like Airbnb, Stripe, and OpenAI in their earliest rounds.</p>
                             
                             <ul class="investment-feature-list">
                                 <li class="investment-feature-item">
                                     <svg class="investment-feature-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                                     </svg>
-                                    <div class="investment-feature-text">$250K minimum investment</div>
+                                    <div class="investment-feature-text"><strong>Clear</strong> — Investors know exactly what % they'll own</div>
                                 </li>
                                 <li class="investment-feature-item">
                                     <svg class="investment-feature-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                                     </svg>
-                                    <div class="investment-feature-text">Preferred equity with 1x liquidation preference</div>
+                                    <div class="investment-feature-text"><strong>Clean</strong> — No debt, no interest, no maturity date</div>
                                 </li>
                                 <li class="investment-feature-item">
                                     <svg class="investment-feature-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                                     </svg>
-                                    <div class="investment-feature-text">Pro-rata rights for future rounds</div>
-                                </li>
-                                <li class="investment-feature-item">
-                                    <svg class="investment-feature-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                    </svg>
-                                    <div class="investment-feature-text">Board observer rights for investments over $1M</div>
-                                </li>
-                                <li class="investment-feature-item">
-                                    <svg class="investment-feature-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                    </svg>
-                                    <div class="investment-feature-text">60% of round already committed</div>
+                                    <div class="investment-feature-text"><strong>Fast</strong> — We can accept capital as it comes in (rolling close)</div>
                                 </li>
                             </ul>
                             
+                            <div class="safe-terms mt-4 mb-4">
+                                <h4 class="mb-3">SAFE Terms:</h4>
+                                <div class="safe-term-item">
+                                    <div class="safe-term-label">Valuation Cap:</div>
+                                    <div class="safe-term-value">$5,000,000</div>
+                                </div>
+                                <div class="safe-term-item">
+                                    <div class="safe-term-label">Discount:</div>
+                                    <div class="safe-term-value">None (single-cap round for simplicity)</div>
+                                </div>
+                                <div class="safe-term-item">
+                                    <div class="safe-term-label">Pro-Rata Rights:</div>
+                                    <div class="safe-term-value">Available to strategic partners</div>
+                                </div>
+                            </div>
+                            
+                            <p class="mb-4">We're following YC's best practices to keep this raise founder-aligned, transparent, and built for long-term success.</p>
+                            
                             <div class="text-center">
-                                <a href="#cta-section" class="btn btn-primary btn-lg">Schedule Investor Call</a>
+                                <a href="#cta-section" class="btn btn-primary btn-lg">Request SAFE Documents</a>
                             </div>
                         </div>
                     </div>
@@ -383,47 +445,27 @@
                 
                 <div class="col-6 col-md-12 animate-on-scroll delay-200">
                     <div class="investment-timeline">
-                        <h3 class="mb-4">Investment Timeline</h3>
+                        <h3 class="mb-4">YC SAFE Benefits</h3>
                         
-                        <div class="timeline">
-                            <div class="timeline-item completed">
-                                <div class="timeline-dot">1</div>
-                                <div>
-                                    <div class="timeline-title">Seed Round</div>
-                                    <div class="timeline-date">Q4 2023 - Completed</div>
-                                </div>
+                        <div class="safe-benefits">
+                            <div class="safe-benefit-item">
+                                <h4>Industry Standard</h4>
+                                <p>The YC SAFE is the gold standard for early-stage fundraising, used by thousands of successful startups including Airbnb, Stripe, and OpenAI.</p>
                             </div>
                             
-                            <div class="timeline-item active">
-                                <div class="timeline-dot">2</div>
-                                <div>
-                                    <div class="timeline-title">Series A</div>
-                                    <div class="timeline-date">Q3 2024 - Current</div>
-                                </div>
+                            <div class="safe-benefit-item">
+                                <h4>Simple Calculator</h4>
+                                <p>You can preview our cap table impact using the YC SAFE Calculator to see exactly what percentage you'll own.</p>
                             </div>
                             
-                            <div class="timeline-item">
-                                <div class="timeline-dot">3</div>
-                                <div>
-                                    <div class="timeline-title">Series B</div>
-                                    <div class="timeline-date">Q2 2025 - Projected</div>
-                                </div>
+                            <div class="safe-benefit-item">
+                                <h4>Founder-Aligned</h4>
+                                <p>The Post-Money SAFE structure keeps things simple while protecting both founder and investor interests for the long term.</p>
                             </div>
                             
-                            <div class="timeline-item">
-                                <div class="timeline-dot">4</div>
-                                <div>
-                                    <div class="timeline-title">Series C</div>
-                                    <div class="timeline-date">Q1 2026 - Projected</div>
-                                </div>
-                            </div>
-                            
-                            <div class="timeline-item">
-                                <div class="timeline-dot">5</div>
-                                <div>
-                                    <div class="timeline-title">Exit</div>
-                                    <div class="timeline-date">2027 - Projected</div>
-                                </div>
+                            <div class="safe-benefit-item">
+                                <h4>Flexible Participation</h4>
+                                <p>With a rolling close, investors can participate at their own pace without waiting for a formal round to close.</p>
                             </div>
                         </div>
                         
@@ -431,28 +473,28 @@
                             <h3 class="mb-4">Use of Funds</h3>
                             
                             <div class="funds-chart">
-                                <div class="funds-segment funds-segment-1">40%</div>
-                                <div class="funds-segment funds-segment-2">25%</div>
-                                <div class="funds-segment funds-segment-3">20%</div>
-                                <div class="funds-segment funds-segment-4">15%</div>
+                                <div class="funds-segment funds-segment-1">45%</div>
+                                <div class="funds-segment funds-segment-2">30%</div>
+                                <div class="funds-segment funds-segment-3">15%</div>
+                                <div class="funds-segment funds-segment-4">10%</div>
                             </div>
                             
                             <div class="funds-legend">
                                 <div class="funds-legend-item">
                                     <div class="funds-legend-color funds-legend-color-1"></div>
-                                    <div class="funds-legend-text">R&D and Engineering (40%)</div>
+                                    <div class="funds-legend-text">Protocol Development (45%)</div>
                                 </div>
                                 <div class="funds-legend-item">
                                     <div class="funds-legend-color funds-legend-color-2"></div>
-                                    <div class="funds-legend-text">Sales and Marketing (25%)</div>
+                                    <div class="funds-legend-text">SDK & Developer Tools (30%)</div>
                                 </div>
                                 <div class="funds-legend-item">
                                     <div class="funds-legend-color funds-legend-color-3"></div>
-                                    <div class="funds-legend-text">Operations (20%)</div>
+                                    <div class="funds-legend-text">Developer Relations (15%)</div>
                                 </div>
                                 <div class="funds-legend-item">
                                     <div class="funds-legend-color funds-legend-color-4"></div>
-                                    <div class="funds-legend-text">Strategic Reserves (15%)</div>
+                                    <div class="funds-legend-text">Legal & Operations (10%)</div>
                                 </div>
                             </div>
                         </div>

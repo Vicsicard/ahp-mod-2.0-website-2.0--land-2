@@ -20,6 +20,72 @@
             z-index: 0;
         }
         
+        .moat-intro-card {
+            background: rgba(26, 27, 38, 0.7);
+            border-radius: var(--border-radius-lg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .moat-intro-card .lead {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.9);
+            margin: 0;
+        }
+        
+        .ip-status-table {
+            margin-top: 1.5rem;
+        }
+        
+        .ip-status-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .ip-status-row:last-child {
+            border-bottom: none;
+        }
+        
+        .ip-status-type {
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .ip-status-value {
+            color: var(--primary);
+        }
+        
+        .moat-features {
+            margin-top: 1.5rem;
+        }
+        
+        .moat-feature {
+            margin-bottom: 1.25rem;
+            padding-bottom: 1.25rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .moat-feature:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .moat-feature-name {
+            font-weight: 600;
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+        
+        .moat-feature-desc {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+        }
+        
         .moat-content {
             position: relative;
             z-index: 1;
@@ -65,6 +131,30 @@
             font-weight: 700;
             color: var(--primary);
             font-size: 1.125rem;
+        }
+        
+        .conclusion-card {
+            background: linear-gradient(135deg, rgba(54, 143, 139, 0.2), rgba(99, 102, 241, 0.2));
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 2.5rem;
+        }
+        
+        .conclusion-card h3 {
+            color: white;
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .conclusion-card p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.2rem;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+        
+        .moat-conclusion {
+            margin-top: 3rem;
         }
         
         .moat-comparison {
@@ -195,117 +285,88 @@
 
     <div class="container moat-section">
         <div class="section-header animate-on-scroll">
-            <h2 class="section-title">Our Competitive <span class="highlight-text">Moat</span></h2>
-            <p class="section-subtitle">Multiple layers of protection ensure long-term market dominance</p>
+            <h2 class="section-title">Defensible by <span class="highlight-text">Design</span></h2>
+            <p class="section-subtitle">The AHP IP Moat: Built to scale, defend, and lead</p>
+        </div>
+        
+        <div class="row mb-5 animate-on-scroll">
+            <div class="col-lg-12">
+                <div class="moat-intro-card">
+                    <p class="lead">AHP Mod 2.0 isn't just a great idea — it's a legally protected protocol built to scale, defend, and lead. We've built a multi-layered IP defense moat to make sure AHP remains the foundation others build on — not compete with.</p>
+                </div>
+            </div>
         </div>
         
         <div class="grid moat-content">
-            <div class="col-4 col-md-6 col-sm-12 animate-on-scroll delay-100">
+            <div class="col-6 col-md-6 col-sm-12 animate-on-scroll delay-100">
                 <div class="moat-card">
                     <svg class="moat-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                     </svg>
-                    <h3>Patent Portfolio</h3>
-                    <p>Our core technology is protected by 7 pending patents covering the protocol architecture, communication methods, and integration systems.</p>
-                    <div class="patent-badge">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                            <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
-                        </svg>
-                        7 Patents Pending
+                    <h3>✅ Intellectual Property Status</h3>
+                    <div class="ip-status-table">
+                        <div class="ip-status-row">
+                            <div class="ip-status-type">Copyright</div>
+                            <div class="ip-status-value">✔️ Registered (Protocol Spec)</div>
+                        </div>
+                        <div class="ip-status-row">
+                            <div class="ip-status-type">Trademark</div>
+                            <div class="ip-status-value">⏳ In Process</div>
+                        </div>
+                        <div class="ip-status-row">
+                            <div class="ip-status-type">Patent (Core Method)</div>
+                            <div class="ip-status-value">⏳ In Process</div>
+                        </div>
                     </div>
                 </div>
             </div>
             
-            <div class="col-4 col-md-6 col-sm-12 animate-on-scroll delay-200">
+            <div class="col-6 col-md-6 col-sm-12 animate-on-scroll delay-200">
                 <div class="moat-card">
                     <svg class="moat-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
                     </svg>
-                    <h3>Network Effects</h3>
-                    <p>Each new integration strengthens our protocol's value proposition. With 2,500+ developer stars and growing adoption, we're creating powerful network effects.</p>
-                    <div class="moat-stat">4.7x Monthly Growth Rate</div>
-                </div>
-            </div>
-            
-            <div class="col-4 col-md-6 col-sm-12 animate-on-scroll delay-300">
-                <div class="moat-card">
-                    <svg class="moat-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                    </svg>
-                    <h3>Strategic Partnerships</h3>
-                    <p>We've secured early partnerships with key AI platforms and enterprise customers, creating high switching costs and establishing AHP as the standard.</p>
-                    <div class="moat-stat">12 Enterprise Partners</div>
+                    <h3>🧱 What Makes AHP Hard to Copy</h3>
+                    <div class="moat-features">
+                        <div class="moat-feature">
+                            <div class="moat-feature-name">Custom Syntax Layer</div>
+                            <div class="moat-feature-desc">Proprietary formatting optimized for LLM ingestion and consistency</div>
+                        </div>
+                        <div class="moat-feature">
+                            <div class="moat-feature-name">Model-Agnostic Translation Engine</div>
+                            <div class="moat-feature-desc">Works across all major AI systems — no fine-tuning required</div>
+                        </div>
+                        <div class="moat-feature">
+                            <div class="moat-feature-name">SDK & Tooling Ecosystem</div>
+                            <div class="moat-feature-desc">Reduces developer friction and creates platform lock-in</div>
+                        </div>
+                        <div class="moat-feature">
+                            <div class="moat-feature-name">Enterprise-Grade Security</div>
+                            <div class="moat-feature-desc">Optional signing + validation layer built in</div>
+                        </div>
+                        <div class="moat-feature">
+                            <div class="moat-feature-name">Brand Protection</div>
+                            <div class="moat-feature-desc">Trademark ensures AHP can't be co-opted by competitors</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
         
-        <div class="moat-comparison animate-on-scroll delay-400">
-            <h3 class="text-center mb-4" style="color: white;">Competitive Analysis</h3>
-            
-            <div class="table-responsive">
-                <table class="comparison-table">
-                    <thead>
-                        <tr>
-                            <th>Feature</th>
-                            <th class="comparison-header-highlight">AHP Mod 2.0</th>
-                            <th>Proprietary APIs</th>
-                            <th>Custom Solutions</th>
-                            <th>Open Source Tools</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Universal Model Compatibility</td>
-                            <td class="comparison-highlight"><span class="comparison-check">✓</span></td>
-                            <td><span class="comparison-x">✗</span></td>
-                            <td><span class="comparison-partial">~</span></td>
-                            <td><span class="comparison-partial">~</span></td>
-                        </tr>
-                        <tr>
-                            <td>Protocol-Level Standardization</td>
-                            <td class="comparison-highlight"><span class="comparison-check">✓</span></td>
-                            <td><span class="comparison-x">✗</span></td>
-                            <td><span class="comparison-x">✗</span></td>
-                            <td><span class="comparison-x">✗</span></td>
-                        </tr>
-                        <tr>
-                            <td>Enterprise-Grade Security</td>
-                            <td class="comparison-highlight"><span class="comparison-check">✓</span></td>
-                            <td><span class="comparison-partial">~</span></td>
-                            <td><span class="comparison-partial">~</span></td>
-                            <td><span class="comparison-x">✗</span></td>
-                        </tr>
-                        <tr>
-                            <td>Computational Efficiency</td>
-                            <td class="comparison-highlight"><span class="comparison-check">✓</span></td>
-                            <td><span class="comparison-partial">~</span></td>
-                            <td><span class="comparison-x">✗</span></td>
-                            <td><span class="comparison-partial">~</span></td>
-                        </tr>
-                        <tr>
-                            <td>Patent Protection</td>
-                            <td class="comparison-highlight"><span class="comparison-check">✓</span></td>
-                            <td><span class="comparison-partial">~</span></td>
-                            <td><span class="comparison-x">✗</span></td>
-                            <td><span class="comparison-x">✗</span></td>
-                        </tr>
-                        <tr>
-                            <td>Implementation Time</td>
-                            <td class="comparison-highlight">Hours</td>
-                            <td>Days</td>
-                            <td>Weeks</td>
-                            <td>Days</td>
-                        </tr>
-                        <tr>
-                            <td>Scalability</td>
-                            <td class="comparison-highlight">Unlimited</td>
-                            <td>Limited</td>
-                            <td>Custom</td>
-                            <td>Variable</td>
-                        </tr>
-                    </tbody>
-                </table>
+        <div class="moat-conclusion animate-on-scroll delay-400">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="moat-card conclusion-card">
+                        <h3 class="text-center mb-4">Building for Long-Term Market Leadership</h3>
+                        <p class="text-center">
+                            AHP Mod 2.0 isn't just a protocol — it's a defensible business with multiple layers of IP protection.
+                            Our legal moat ensures we remain the foundation that others build on, not compete with.
+                        </p>
+                        <div class="text-center mt-4">
+                            <a href="#contact-section" class="btn btn-primary btn-lg">Discuss Partnership Opportunities</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         
