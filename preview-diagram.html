@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AHP Mod 2.0 Before-After Diagram Preview</title>
+    <style>
+        :root {
+            /* Colors */
+            --primary: #45A29E;
+            --secondary: #66FCF1;
+            --dark-bg: #0B0C10;
+            --dark-surface: #1F2833;
+            --white: #FFFFFF;
+            --soft-white: #FAFAFA;
+            --gray-light: #C5C6C7;
+            --gray-medium: #5C5C5C;
+            --gray-dark: #2B2B2B;
+            --danger: #EF4444;
+            --success: #10B981;
+            
+            /* Gradients */
+            --gradient-primary: linear-gradient(135deg, #45A29E 0%, #66FCF1 100%);
+            
+            /* Border Radius */
+            --border-radius: 8px;
+            --border-radius-lg: 12px;
+            --border-radius-full: 9999px;
+            
+            /* Shadows */
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            
+            /* Typography */
+            --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        
+        body {
+            font-family: var(--font-family);
+            background-color: var(--dark-bg);
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin-right: -15px;
+            margin-left: -15px;
+        }
+        
+        .col-md-6 {
+            flex: 0 0 50%;
+            max-width: 50%;
+            padding: 0 15px;
+        }
+        
+        @media (max-width: 768px) {
+            .col-md-6 {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+        }
+        
+        .mb-4 {
+            margin-bottom: 1.5rem;
+        }
+        
+        .mb-5 {
+            margin-bottom: 3rem;
+        }
+        
+        .mt-4 {
+            margin-top: 1.5rem;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        .section-title {
+            color: var(--white);
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Include the before-after diagram component -->
+    <div id="component-container"></div>
+
+    <script>
+        // Load the component
+        fetch('components/before-after-diagram.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('component-container').innerHTML = html;
+            })
+            .catch(error => {
+                console.error('Error loading component:', error);
+                document.getElementById('component-container').innerHTML = '<p style="color: white; text-align: center;">Error loading component</p>';
+            });
+    </script>
+</body>
+</html>

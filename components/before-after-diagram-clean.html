@@ -1,0 +1,438 @@
+<div class="section section-dark">
+    <div class="container">
+        <h2 class="section-title text-center mb-5">Before vs. After AHP Mod 2.0</h2>
+        
+        <div class="row">
+            <!-- Before Column -->
+            <div class="col-md-6 mb-4 before">
+                <div class="comparison-card">
+                    <h3 class="comparison-title text-center mb-4">Before</h3>
+                    <div class="diagram-container">
+                        <div class="diagram-content">
+                            <!-- Human Icon -->
+                            <div class="diagram-node human-node">
+                                <div class="node-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                        <circle cx="12" cy="7" r="4"></circle>
+                                    </svg>
+                                </div>
+                                <div class="node-label">Human</div>
+                            </div>
+                            
+                            <!-- App Row -->
+                            <div class="app-row">
+                                <div class="app-node">
+                                    <div class="app-label">App 1</div>
+                                </div>
+                                <div class="app-node">
+                                    <div class="app-label">App 2</div>
+                                </div>
+                                <div class="app-node">
+                                    <div class="app-label">App 3</div>
+                                </div>
+                            </div>
+                            
+                            <!-- AI Model Row -->
+                            <div class="model-row">
+                                <div class="model-node">
+                                    <div class="model-label">AI Model</div>
+                                </div>
+                                <div class="model-node">
+                                    <div class="model-label">AI Model</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Problem Indicators -->
+                            <div class="problem-indicators">
+                                <div class="problem-indicator">
+                                    <div class="indicator-icon error-icon">✕</div>
+                                    <div class="indicator-label">Slow Performance</div>
+                                </div>
+                                <div class="problem-indicator">
+                                    <div class="indicator-icon error-icon">✕</div>
+                                    <div class="indicator-label">Fragmentation</div>
+                                </div>
+                                <div class="problem-indicator">
+                                    <div class="indicator-icon error-icon">✕</div>
+                                    <div class="indicator-label">Inconsistency</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- After Column -->
+            <div class="col-md-6 mb-4 after">
+                <div class="comparison-card">
+                    <h3 class="comparison-title text-center mb-4">After</h3>
+                    <div class="diagram-container">
+                        <div class="diagram-content">
+                            <!-- Human Icon -->
+                            <div class="diagram-node human-node">
+                                <div class="node-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                        <circle cx="12" cy="7" r="4"></circle>
+                                    </svg>
+                                </div>
+                                <div class="node-label">Human</div>
+                            </div>
+                            
+                            <!-- AHP Protocol Node -->
+                            <div class="ahp-node">
+                                <div class="ahp-label">AHP Mod 2.0</div>
+                            </div>
+                            
+                            <!-- App Row -->
+                            <div class="app-row">
+                                <div class="app-node connected">
+                                    <div class="app-label">App 1</div>
+                                </div>
+                                <div class="app-node connected">
+                                    <div class="app-label">App 2</div>
+                                </div>
+                                <div class="app-node connected">
+                                    <div class="app-label">App 3</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Problem Indicators (solved) -->
+                            <div class="solution-indicators">
+                                <div class="solution-indicator">
+                                    <div class="indicator-icon success-icon">✓</div>
+                                    <div class="indicator-label">Fragmentation</div>
+                                </div>
+                                <div class="solution-indicator">
+                                    <div class="indicator-icon success-icon">✓</div>
+                                    <div class="indicator-label">Inconsistency</div>
+                                </div>
+                                <div class="solution-indicator">
+                                    <div class="indicator-icon success-icon">✓</div>
+                                    <div class="indicator-label">Security Risk</div>
+                                </div>
+                                <div class="solution-indicator">
+                                    <div class="indicator-icon success-icon">✓</div>
+                                    <div class="indicator-label">Performance</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Caption -->
+        <div class="explanation-box mt-4">
+            <p class="explanation-text text-center">
+                AHP Mod 2.0 eliminates miscommunication between systems by serving as a universal AI interpreter—bridging humans, applications, and AI with one consistent protocol.
+            </p>
+        </div>
+    </div>
+    
+    <style>
+        /* Base styles */
+        .section-dark {
+            background: var(--dark-bg);
+            padding: 5rem 0;
+            color: var(--white);
+        }
+        
+        .comparison-card {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            padding: 2rem;
+            height: 100%;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+        
+        .comparison-title {
+            color: var(--primary);
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .comparison-title:after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--gradient-primary);
+            border-radius: var(--border-radius-full);
+        }
+        
+        /* Explanation box */
+        .explanation-box {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            padding: 2rem;
+            border: 1px solid rgba(69, 162, 158, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .explanation-text {
+            color: var(--soft-white);
+            font-size: 1.1rem;
+            margin-bottom: 0;
+            line-height: 1.6;
+        }
+        
+        /* Diagram Container */
+        .diagram-container {
+            position: relative;
+            min-height: 350px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 2rem;
+        }
+        
+        .diagram-content {
+            width: 100%;
+            position: relative;
+        }
+        
+        /* Human Node */
+        .diagram-node {
+            margin: 0 auto 2rem;
+            text-align: center;
+            position: relative;
+        }
+        
+        .human-node {
+            margin-bottom: 2.5rem;
+        }
+        
+        .node-icon {
+            width: 50px;
+            height: 50px;
+            margin: 0 auto 0.5rem;
+        }
+        
+        .node-icon svg {
+            width: 100%;
+            height: 100%;
+            stroke: var(--primary);
+        }
+        
+        .node-label {
+            font-weight: 600;
+            color: var(--soft-white);
+        }
+        
+        /* App Nodes */
+        .app-row {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        
+        .app-node {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--gray-dark);
+            border-radius: var(--border-radius);
+            padding: 0.75rem 1.25rem;
+            min-width: 80px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .app-node.connected {
+            border-color: var(--primary);
+            box-shadow: 0 0 8px rgba(69, 162, 158, 0.3);
+        }
+        
+        .app-label {
+            font-weight: 500;
+            color: var(--soft-white);
+            font-size: 0.9rem;
+        }
+        
+        /* Model Nodes */
+        .model-row {
+            display: flex;
+            justify-content: space-evenly;
+            margin-bottom: 1rem;
+            width: 70%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .model-node {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--gray-dark);
+            border-radius: var(--border-radius);
+            padding: 0.75rem 1.25rem;
+            min-width: 80px;
+            text-align: center;
+        }
+        
+        .model-label {
+            font-weight: 500;
+            color: var(--gray-light);
+            font-size: 0.9rem;
+        }
+        
+        /* AHP Node */
+        .ahp-node {
+            background: var(--gradient-primary);
+            border-radius: var(--border-radius);
+            padding: 1rem;
+            width: 60%;
+            margin: 0 auto 2rem;
+            text-align: center;
+            position: relative;
+            animation: pulse 3s infinite ease-in-out;
+        }
+        
+        .ahp-label {
+            font-weight: 700;
+            color: white;
+            font-size: 1.1rem;
+        }
+        
+        /* Indicators */
+        .problem-indicators,
+        .solution-indicators {
+            position: absolute;
+            right: 0;
+            top: 30%;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        
+        .problem-indicator,
+        .solution-indicator {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .indicator-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+        
+        .error-icon {
+            background-color: rgba(239, 68, 68, 0.2);
+            color: var(--danger);
+        }
+        
+        .success-icon {
+            background-color: rgba(16, 185, 129, 0.2);
+            color: var(--success);
+        }
+        
+        .indicator-label {
+            font-size: 0.85rem;
+            color: var(--gray-light);
+        }
+        
+        /* Arrows */
+        .app-row:before {
+            content: '';
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            height: 30px;
+            width: 2px;
+            background-color: var(--gray-medium);
+        }
+        
+        .human-node:after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            height: 20px;
+            width: 2px;
+            background-color: var(--gray-medium);
+        }
+        
+        /* Before side arrows */
+        .before .app-node:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            height: 15px;
+            width: 2px;
+            background-color: var(--danger);
+        }
+        
+        /* After side arrows */
+        .after .ahp-node:before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            height: 20px;
+            width: 2px;
+            background-color: var(--success);
+        }
+        
+        .after .ahp-node:after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            height: 20px;
+            width: 2px;
+            background-color: var(--success);
+        }
+        
+        /* Animation */
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(69, 162, 158, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(69, 162, 158, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(69, 162, 158, 0); }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .app-row {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+            
+            .app-node {
+                width: 80%;
+            }
+            
+            .model-row {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+                width: 100%;
+            }
+            
+            .model-node {
+                width: 80%;
+            }
+            
+            .problem-indicators,
+            .solution-indicators {
+                position: relative;
+                right: auto;
+                top: auto;
+                margin-top: 1.5rem;
+                align-items: center;
+            }
+        }
+    </style>
+</div>
